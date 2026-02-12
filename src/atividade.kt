@@ -2,17 +2,61 @@ fun main() {
 
     val array = intArrayOf(1,2,3,4,5)
 
-    questao1(3)
-    valorNumero(0)
-    idadePessoa(59)
-    tabuada(10)
-    somarArray(12, 14, 19, 42, 32)
-    lista()
-    dobrar(12)
-    media(25, 37, 92)
-    trasformador(4.00)
-    maiorArray(1,2,3,4,5)
-    somaPares(array)
+//    questao1(3)
+//    valorNumero(0)
+//    idadePessoa(59)
+//    tabuada(10)
+//    somarArray(12, 14, 19, 42, 32)
+//    lista()
+//    dobrar(12)
+//    media(25, 37, 92)
+//    trasformador(4.00)
+//    maiorArray(1,2,3,4,5)
+//    somaPares(array)
+//    mutiplos()
+//    listas()
+//    compras()
+//    somaMaior()
+//        fatorial()
+
+    val item = listOf(
+        Produto("alicate", 8.0),
+        Produto("chave", 27.0),
+        Produto("furadeira", 18.88)
+    )
+
+        val usuario = ContaBancaria("pedrinho")
+
+        usuario.depositarValor(500.0)
+        usuario.valorsacado(200.0)
+        usuario.consutarSaldo()
+        usuario.valorsacado(100.0)
+
+       var result = item.maxBy { it.preco }
+
+        println("a ${result.item},e o item mais caro custa ${result.preco}")
+
+      val maria = Pessoa()
+
+        maria.nome = "Maria"
+        maria.idade = 17
+        maria.cidade = "Jandira"
+
+
+
+
+  val gerente = Gerente()
+
+    gerente.nome = "Carlos"
+    gerente.salario = 1200.0
+
+  val funcionario = Funcionario()
+
+  funcionario.nome = "Ford"
+  funcionario.salario = 1200.0
+
+
+  println("o gerente ${gerente.nome} recebe ${gerente.salario}, ganha 20% a mais q o funcionario ${funcionario.nome} com o salario ${funcionario.salario}")
 }
 
 // questao 1
@@ -147,3 +191,72 @@ fun trasformador(c: Double){
     println(f)
 
 }
+// questao 12
+fun mutiplos(){
+    val lista = (1 .. 100).toList()
+
+
+    for(numero in lista){
+        if (numero % 3 == 0){
+            println("Batata")
+        }else if(numero % 5 == 0){
+            println("quente")
+        }else if(numero % 3 == 0 && numero % 5 == 0){
+            println("batataQuente")
+        }else{
+            println("numero")
+        }
+    }
+
+}
+// questao 13
+fun listas(){
+    val lista = listOf(1,2,3,4,5)
+
+    val array = mutableListOf<Int>()
+
+    for (numero in lista){
+        if (numero % 2 !== 0){
+                array.add(numero)
+        }
+
+    }
+    println(array)
+    println(lista)
+}
+// total compra 14
+fun compras(){
+    val itens: List<Double> = listOf(1.0,2.0,3.0,4.0,5.0)
+
+     val total = itens.sum()
+
+    println(total)
+
+}
+// questao 15
+fun somaMaior(){
+    val idades = listOf<Int>(27, 10, 19, 56, 70)
+
+    val somaIdade = mutableListOf<Int>()
+    for (i in idades){
+        if(i >= 18){
+            somaIdade.add(i)
+        }
+    }
+
+
+    println(somaIdade.sum())
+}
+fun fatorial(){
+    val numero = 5
+
+
+    val fatorial = 1 .. numero
+
+    val result = fatorial.reduce { acc, mutiplicador -> acc * mutiplicador }
+
+    println(result)
+}
+
+
+
